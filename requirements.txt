@@ -1,9 +1,9 @@
 # Core requirements
-werkzeug
-
-# Optional
+meow.di
+meow.validators
 jinja2
 whitenoise
+werkzeug
 
 # Testing requirements
 mypy
