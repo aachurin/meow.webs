@@ -1,0 +1,20 @@
+#!/bin/sh -e
+
+PREFIX=""
+SOURCE="./"
+
+if [ -n "$1" ] ; then
+    PREFIX=$1
+fi
+
+if [ -n "$2" ] ; then
+    SOURCE=$2
+fi
+
+
+${PREFIX}black -t py38 --check --diff ${SOURCE}
+${PREFIX}mypy \
+    --config-file=${SOURCE}.mypy.ini \
+    --cache-dir=/dev/null \
+    --show-absolute-path \
+    ${SOURCE}/meow

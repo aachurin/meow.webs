@@ -1,0 +1,14 @@
+# Core requirements
+werkzeug
+
+# Optional
+jinja2
+whitenoise
+
+# Testing requirements
+mypy
+black
+codecov
+pytest
+pytest-cov
+requests

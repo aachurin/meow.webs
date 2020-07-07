@@ -1,0 +1,14 @@
+*.pyc
+.cache
+.coverage
+.git
+.mypy_cache
+.pytest_cache
+__pycache__
+/*.egg-info
+/build
+/dist
+.DS_Store
+.idea
+*._md
+*._py
