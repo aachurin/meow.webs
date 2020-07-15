@@ -330,7 +330,7 @@ def test_included_routes(client):
 def test_path_params_not_found(client):
     response = client.get("/extra/path_params/1/a/00000000-0000-0000-0000-000000000000")
     assert response.status_code == 404
-    assert response.json() == {"p2": "Must be a number."}
+    assert response.json() == {"p2": "Expected Float."}
 
 
 def test_return_default_query_param(client):
@@ -347,7 +347,7 @@ def test_return_required_query_param(client):
 def test_invalid_query_param(client):
     response = client.get("/return_required_query_param/?x=a")
     assert response.status_code == 400
-    assert response.json() == {"x": "Must be a number."}
+    assert response.json() == {"x": "Expected Integer."}
 
 
 def test_return_input_data_get(client):
@@ -355,7 +355,7 @@ def test_return_input_data_get(client):
     assert response.json() == {"x": "a", "y": 1}
     response = client.get("/return_input_data_get/?x=a&y=a")
     assert response.status_code == 400
-    assert response.json() == {"y": "Must be a number."}
+    assert response.json() == {"y": "Expected Integer."}
 
 
 def test_return_input_data_post(client):
@@ -364,7 +364,7 @@ def test_return_input_data_post(client):
     assert response.json() == {"x": "a", "y": 1}
     response = client.post("/return_input_data_post/", json={"x": "a", "y": "1"})
     assert response.status_code == 400
-    assert response.json() == {"y": "Must be a number."}
+    assert response.json() == {"y": "Expected Integer."}
     response = client.post("/return_input_data_post/", data={"x": "a", "y": "1"})
     assert response.status_code == 200
     assert response.json() == {"x": "a", "y": 1}
