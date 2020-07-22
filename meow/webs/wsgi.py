@@ -13,14 +13,17 @@ WSGIEnviron = typing.Dict[str, str]
 ExcInfo = typing.Tuple[typing.Type[BaseException], BaseException, types.TracebackType]
 
 
-class WSGIStartResponse(typing.Protocol):
-    def __call__(
-        self,
-        status: str,
-        headers: typing.Iterable[typing.Tuple[str, str]],
-        exc_info: typing.Optional[ExcInfo] = None,
-    ) -> None:
-        ...  # pragma: nocover
+WSGIStartResponse = typing.Callable[
+    [str, typing.Iterable[typing.Tuple[str, str]], typing.Optional[ExcInfo]], None
+]
+# class WSGIStartResponse(typing.Protocol):
+#     def __call__(
+#         self,
+#         status: str,
+#         headers: typing.Iterable[typing.Tuple[str, str]],
+#         exc_info: typing.Optional[ExcInfo] = None,
+#     ) -> None:
+#         ...  # pragma: nocover
 
 
 RESPONSE_STATUS_TEXT = {

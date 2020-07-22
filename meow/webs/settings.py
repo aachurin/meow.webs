@@ -27,7 +27,7 @@ class Settings:
     TEMPLATE_DIRS: typing.Tuple[typing.Union[str, typing.Dict[str, str]], ...] = ()
     STATIC_DIRS: typing.Tuple[typing.Union[str, typing.Dict[str, str]], ...] = ()
 
-    def __getitem__(self, item: str) -> typing.Any:
+    def __getitem__(self, item: str) -> typing.Any:  # pragma: nocover
         try:
             return getattr(self, item)
         except AttributeError:

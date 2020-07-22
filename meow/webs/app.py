@@ -76,7 +76,6 @@ class App:
         found_components += TEMPLATES_COMPONENTS
 
         initials = {
-            "settings": Settings,
             "environ": WSGIEnviron,
             "start_response": WSGIStartResponse,
             "exc": Exception,
@@ -142,7 +141,6 @@ class App:
         self, environ: WSGIEnviron, start_response: WSGIStartResponse
     ) -> typing.Sequence[bytes]:
         state = {
-            "app": self,
             "environ": environ,
             "start_response": start_response,
             "exc": None,

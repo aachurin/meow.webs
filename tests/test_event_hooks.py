@@ -20,7 +20,7 @@ def test_on_response(client):
 
 
 def test_on_error(client):
-    with pytest.raises(TypeError) as excinfo:
+    with pytest.raises(TypeError):
         client.get("/return_unserializable_json/")
     import hooks
 

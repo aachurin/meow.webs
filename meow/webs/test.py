@@ -6,7 +6,7 @@ from meow.webs import App, wsgi
 
 
 class _MockOriginalResponse:
-    def __init__(self, headers: typing.List[typing.Tuple[str, str]]):
+    def __init__(self, headers: typing.Iterable[typing.Tuple[str, str]]):
         self.msg = requests.packages.urllib3.response.HTTPHeaderDict(headers)
         self.closed = False
 
@@ -69,7 +69,7 @@ class _WSGIAdapter(requests.adapters.HTTPAdapter):
 
         def start_response(
             status: str,
-            headers: typing.List[typing.Tuple[str, str]],
+            headers: typing.Iterable[typing.Tuple[str, str]],
             exc_info: typing.Optional[wsgi.ExcInfo] = None,
         ) -> None:
             if exc_info is not None:
