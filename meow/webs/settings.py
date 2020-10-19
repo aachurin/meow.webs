@@ -18,7 +18,7 @@ class EventHook(typing.Protocol):
 
 class Settings:
     __slots__ = ()
-    ROUTES: str = "routes.ROUTES"
+    ROUTES: str = "routes.routes"
     STATIC_URL: str = "/static"
     DEBUG: bool = True
     PROPAGATE_EXCEPTIONS: typing.Optional[bool] = None

@@ -133,7 +133,7 @@ class App:
         if status is None:
             status = str(response.status_code)
 
-        headers = response.headers.items()
+        headers = response.headers.multi_items()
         start_response(status, headers, response.exc_info)
         return [response.content]
 

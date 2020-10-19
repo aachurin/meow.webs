@@ -11,5 +11,5 @@ if sys.version_info < (3, 8):
     raise Exception("Python < 3.8 is not supported")  # pragma: nocover
 
 
-__version__ = "1.0.2"
+__version__ = "1.0.3"
 __all__ = ["App", "Settings", "Route", "Include", "Component", "Templates", "http"]

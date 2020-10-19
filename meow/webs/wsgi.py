@@ -14,7 +14,7 @@ ExcInfo = typing.Tuple[typing.Type[BaseException], BaseException, types.Tracebac
 
 
 WSGIStartResponse = typing.Callable[
-    [str, typing.Iterable[typing.Tuple[str, str]], typing.Optional[ExcInfo]], None
+    [str, typing.List[typing.Tuple[str, str]], typing.Optional[ExcInfo]], None
 ]
 # class WSGIStartResponse(typing.Protocol):
 #     def __call__(

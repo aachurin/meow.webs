@@ -17,8 +17,8 @@ def test_bad_settings():
                 1: "Could not load name hooks.Unimportable",
                 2: "No module named 'nonpackage'",
             },
-            "ROUTES": "Expected String.",
-            "STATIC_DIRS": "Expected Array.",
-            "TEMPLATE_DIRS": "Expected Array.",
+            "ROUTES": "Must be a string.",
+            "STATIC_DIRS": "Must be an array.",
+            "TEMPLATE_DIRS": "Must be an array.",
         }
     }
